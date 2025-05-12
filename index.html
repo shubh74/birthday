@@ -2,181 +2,203 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            padding: 40px 20px;
-            font-family: 'Pacifico', cursive;
-            text-align: center;
-            background: linear-gradient(to top, #ffecd2 0%, #fcb69f 100%);
-            overflow: hidden;
-            min-height: 100vh;
-        }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      background: linear-gradient(to top, #ffecd2 0%, #fcb69f 100%);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
 
-        h1 {
-            font-size: 3rem;
-            color: #ff4081;
-            text-shadow: 2px 2px #fff;
-            margin-bottom: 20px;
-        }
+    h1 {
+      font-size: 2.5rem;
+      color: #ff4081;
+      text-shadow: 2px 2px #fff;
+      margin-bottom: 20px;
+    }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #333;
-            max-width: 700px;
-            margin: auto;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 20px;
-            border-radius: 20px;
-            font-family: 'Arial', sans-serif;
-        }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      max-width: 700px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 20px;
+      font-family: 'Arial', sans-serif;
+    }
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 100vw;
-        }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      max-width: 100%;
+    }
 
-        .text-box {
-            flex: 1 1 300px;
-        }
+    .text-box {
+      flex: 1 1 300px;
+      padding: 10px;
+    }
 
-        .slider {
-            width: 380px;
-            height: 580px;
-            position: relative;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            background: #fff;
-        }
+    .slider {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      aspect-ratio: 2/3;
+      position: relative;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      background: #fff;
+    }
 
-        .slider img,
-        .slider video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            opacity: 0;
-            transition: all 1s ease-in-out;
-        }
+    .slider img,
+    .slider video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      opacity: 0;
+      transition: all 1s ease-in-out;
+    }
 
-        .slider img.active,
-        .slider video.active {
-            left: 0;
-            opacity: 1;
-        }
+    .slider img.active,
+    .slider video.active {
+      left: 0;
+      opacity: 1;
+    }
 
-        .balloon {
-            position: absolute;
-            bottom: -100px;
-            width: 40px;
-            height: 55px;
-            background-color: red;
-            border-radius: 50% 50% 45% 45%;
-            animation: float 10s infinite ease-in;
-        }
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 55px;
+      background-color: red;
+      border-radius: 50% 50% 45% 45%;
+      animation: float 10s infinite ease-in;
+    }
 
-        .balloon::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            width: 2px;
-            height: 20px;
-            background: #333;
-            transform: translateX(-50%);
-        }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #333;
+      transform: translateX(-50%);
+    }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
 
-            100% {
-                transform: translateY(-120vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
-        @media screen and (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
 
-            .slider {
-                width: 90vw;
-                height: 300px;
-            }
-        }
-    </style>
+      p {
+        font-size: 0.95rem;
+        padding: 15px;
+      }
+
+      .slider {
+        width: 90vw;
+        height: auto;
+        aspect-ratio: 2/3;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .slider {
+        width: 95vw;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="text-box">
-            <h1>Happy Birthday Kripu 🎂🎂😍</h1>
-            <p>
-                Dear Bhanji,<br><br>
-                Wishing you the happiest birthday ever! 🥳 You’ve grown up so fast, you even managed to become older than your
-                mama (don’t ask how, we’re still trying to solve that mystery 😆).<br><br>
-                You're smart, funny, and a total boss — and somehow, you're still younger and older at the same time. Time
-                travel, maybe?<br><br>
-                Stay awesome, keep shining, and don’t forget to remind your mama that you came first — even if not
-                chronologically! 🤪<br><br>
-                Lots of love, laughter, and cake! 🎈🎁🍰
-            </p>
-        </div>
-        <div class="slider" id="slider">
-            <img src="WhatsApp Image 2025-05-12 at 1.17.48 AM.jpeg" class="active" />
-            <img src="WhatsApp Image 2025-05-12 at 1.17.49 AM.jpeg" />
-            <img src="WhatsApp Image 2025-05-12 at 1.17.55 AM.jpeg" />
-            <img src="WhatsApp Image 2025-05-12 at 1.23.42 AM (2).jpeg" />
-            <img src="WhatsApp Image 2025-05-12 at 1.23.41 AM.jpeg" />
-            <img src="WhatsApp Image 2025-05-12 at 1.23.42 AM (1).jpeg" />
-            <video src="WhatsApp Video 2025-05-12 at 1.23.41 AM.mp4" muted autoplay loop playsinline></video>
-        </div>
+  <div class="container">
+    <div class="text-box">
+      <h1>Happy Birthday Kripu 🎂🎂😍</h1>
+      <p>
+        Dear Bhanji,<br><br>
+        Wishing you the happiest birthday ever! 🥳 You’ve grown up so fast, you even managed to become older than your
+        mama (don’t ask how, we’re still trying to solve that mystery 😆).<br><br>
+        You're smart, funny, and a total boss — and somehow, you're still younger and older at the same time. Time
+        travel, maybe?<br><br>
+        Stay awesome, keep shining, and don’t forget to remind your mama that you came first — even if not
+        chronologically! 🤪<br><br>
+        Lots of love, laughter, and cake! 🎈🎁🍰
+      </p>
     </div>
+    <div class="slider" id="slider">
+      <img src="WhatsApp Image 2025-05-12 at 1.17.48 AM.jpeg" class="active" />
+      <img src="WhatsApp Image 2025-05-12 at 1.17.49 AM.jpeg" />
+      <img src="WhatsApp Image 2025-05-12 at 1.17.55 AM.jpeg" />
+      <img src="WhatsApp Image 2025-05-12 at 1.23.42 AM (2).jpeg" />
+      <img src="WhatsApp Image 2025-05-12 at 1.23.41 AM.jpeg" />
+      <img src="WhatsApp Image 2025-05-12 at 1.23.42 AM (1).jpeg" />
+      <video src="WhatsApp Video 2025-05-12 at 1.23.41 AM.mp4" muted autoplay loop playsinline></video>
+    </div>
+  </div>
 
-    <!-- Balloons -->
-    <script>
-        for (let i = 0; i < 20; i++) {
-            const balloon = document.createElement('div');
-            balloon.className = 'balloon';
-            balloon.style.left = Math.random() * 100 + 'vw';
-            balloon.style.animationDuration = (5 + Math.random() * 5) + 's';
-            balloon.style.backgroundColor = ['#ff4081', '#ffd700', '#87ceeb', '#32cd32'][i % 4];
-            document.body.appendChild(balloon);
-        }
+  <!-- Balloons -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.animationDuration = (5 + Math.random() * 5) + 's';
+      balloon.style.backgroundColor = ['#ff4081', '#ffd700', '#87ceeb', '#32cd32'][i % 4];
+      document.body.appendChild(balloon);
+    }
 
-        const slides = document.querySelectorAll('.slider img, .slider video');
-        let current = 0;
+    const slides = document.querySelectorAll('.slider img, .slider video');
+    let current = 0;
 
-        function showSlide() {
-            slides.forEach((el, i) => el.classList.remove('active'));
-            slides[current].classList.add('active');
-            current = (current + 1) % slides.length;
-        }
+    function showSlide() {
+      slides.forEach((el, i) => el.classList.remove('active'));
+      slides[current].classList.add('active');
+      current = (current + 1) % slides.length;
+    }
 
-        setInterval(showSlide, 3000);
-    </script>
-
+    setInterval(showSlide, 3000);
+  </script>
 </body>
 
 </html>
